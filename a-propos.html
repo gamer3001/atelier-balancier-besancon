@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos — Atelier Balancier, horlogerie mécanique à Besançon</title>
+  <meta name="description" content="Présentation de l'Atelier Balancier : parcours, méthode de travail et engagements de l'horloger indépendant installé 14 rue de la Monnaie à Besançon.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .svg-tech { width: 100%; max-width: 320px; height: auto; stroke: var(--color-bloc); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .apropos__intro { display: grid; grid-template-columns: 1fr; gap: var(--space-5); align-items: start; }
+    @media (min-width: 768px) { .apropos__intro { grid-template-columns: 1fr 1fr; } }
+    .apropos__parcours { display: grid; grid-template-columns: 1fr; gap: var(--space-5); align-items: start; }
+    @media (min-width: 768px) { .apropos__parcours { grid-template-columns: 1fr 1fr; } }
+    .apropos__valeurs .filets li { display: grid; grid-template-columns: 1fr auto; gap: var(--space-3); align-items: baseline; padding: var(--space-3) 0; }
+    .apropos__valeurs .filets li:not(:last-child) { border-bottom: 1px solid var(--color-bordure); }
+    .apropos__valeurs .filets strong { font-weight: 500; }
+    .apropos__valeurs .filets span { color: var(--color-texte-secondaire); text-align: right; font-family: var(--font-corps); }
+  </style>
+</head>
+<body>
+  <header class="entete">
+    <div class="conteneur entete__interieur">
+      <a href="index.html" class="marque" aria-label="Atelier Balancier — Accueil">Atelier Balancier</a>
+      <nav class="nav" id="nav-principal" role="navigation" aria-label="Navigation principale">
+        <a href="prestations.html">Prestations</a>
+        <a href="etabli.html">L'établi</a>
+        <a href="a-propos.html" aria-current="page">À propos</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="nav-bouton" id="nav-bouton" aria-expanded="false" aria-controls="nav-principal" aria-label="Ouvrir le menu" type="button">
+        <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--teintee apropos__intro" aria-labelledby="titre-identite">
+      <div class="pile" style="gap: var(--space-3);">
+        <h1 id="titre-identite" class="titre-section" style="font-size: var(--fs-3xl); line-height: var(--lh-tight); margin-bottom: var(--space-2);">L'atelier et son horloger</h1>
+        <p class="chapeau" style="font-size: var(--fs-lg);">Atelier Balancier est une structure indépendante dédiée à l'horlogerie mécanique, installée au 14 rue de la Monnaie à Besançon.</p>
+        <p class="texte-large">Nous intervenons sur les mouvements à remontage manuel, les calibres automatiques et les montres anciennes. Chaque intervention suit un protocole identique : examen complet, diagnostic écrit, accord préalable, exécution à l'établi, contrôle de marche sur plusieurs jours. Aucune opération n'est engagée sans votre validation explicite.</p>
+        <p class="texte-large">L'atelier ne reçoit pas de public en accès libre. Le dépôt et la restitution s'effectuent sur rendez-vous, ou par envoi sécurisé après accord écrit. Cette organisation garantit la traçabilité de chaque montre et la disponibilité de l'horloger pour l'examen initial.</p>
+      </div>
+      <div class="centre" aria-hidden="true">
+        <svg class="svg-tech" viewBox="0 0 200 200" role="img" aria-label="Schéma technique : balancier-spiral et roue d'ancre stylisés">
+          <circle cx="100" cy="100" r="85" stroke-dasharray="4 6" opacity="0.3"/>
+          <path d="M100 15 L100 50 M100 150 L100 185 M15 100 L50 100 M150 100 L185 100" stroke-width="1" opacity="0.4"/>
+          <g transform="translate(100 100)">
+            <circle r="38" stroke-width="2"/>
+            <path d="M0 -38 L0 -25 M0 38 L0 25 M-38 0 L-25 0 M38 0 L25 0" stroke-width="1.5"/>
+            <path d="M 0 -30 A 30 30 0 0 1 21.2 -21.2" stroke-width="2" stroke="var(--color-accent)" opacity="0.8"/>
+            <ellipse cx="0" cy="0" rx="8" ry="12" stroke-width="1.5"/>
+            <path d="M 0 0 Q -5 15 -8 25 Q -10 35 -5 42" stroke-width="1.5" stroke="var(--color-accent)" opacity="0.8"/>
+            <circle cx="-12" cy="-12" r="3" fill="var(--color-bloc)"/>
+            <path d="M -12 -12 L -25 -25" stroke-width="1" opacity="0.5"/>
+          </g>
+          <g transform="translate(100 100) rotate(45)">
+            <rect x="-6" y="-30" width="12" height="25" rx="1" stroke-width="1.5"/>
+            <path d="M -6 -5 L -15 -15 M 6 -5 L 15 -15" stroke-width="1" opacity="0.6"/>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="section apropos__valeurs" aria-labelledby="titre-valeurs">
+      <div class="conteneur">
+        <h2 id="titre-valeurs" class="titre-section" style="margin-bottom: var(--space-4);">Principes qui guident l'établi</h2>
+        <ul class="filets apropos__valeurs" style="border-top: 1px solid var(--color-bordure); border-bottom: 1px solid var(--color-bordure);">
+          <li>
+            Diagnostic avant intervention
+            <span>Amplitude, mise en heure, état des huiles, usure des pivots : tout est mesuré et consigné avant le premier tour de vis.</span>
+          </li>
+          <li>
+            Conservation des pièces d'origine
+            <span>Remplacement seulement si la pièce est hors cote ou cassée. Ajustement en atelier privilégié pour les composants d'époque.</span>
+          </li>
+          <li>
+            Contrôle de marche réel
+            <span>Observation sur 5 à 7 jours en positions couronnées, cadran haut, cadran bas. Réserve de marche vérifiée à l'arrêt complet.</span>
+          </li>
+          <li>
+            Traçabilité et transparence
+            <span>Compte-rendu écrit des opérations, pièces remplacées, huiles utilisées, résultats de marche. Facture détaillée sans poste caché.</span>
+          </li>
+          <li>
+            Respect de l'esthétique d'origine
+            <span>Avivage léger du boîtier sans arrondir les arêtes. Patine du cadran et des aiguilles préservée sauf demande contraire motivée.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--teintee apropos__parcours" aria-labelledby="titre-parcours">
+      <div class="centre" aria-hidden="true">
+        <svg class="svg-tech" viewBox="0 0 200 200" role="img" aria-label="Schéma technique : rouage de base et côtes de boîtier">
+          <rect x="20" y="20" width="160" height="160" rx="4" stroke-dasharray="8 4" opacity="0.2"/>
+          <circle cx="100" cy="100" r="55" stroke-width="1.5"/>
+          <circle cx="100" cy="100" r="30" stroke-width="1.5"/>
+          <g stroke-width="1" opacity="0.5">
+            <line x1="100" y1="45" x2="100" y2="15"/>
+            <line x1="100" y1="155" x2="100" y2="185"/>
+            <line x1="45" y1="100" x2="15" y2="100"/>
+            <line x1="155" y1="100" x2="185" y2="100"/>
+            <text x="100" y="10" text-anchor="middle" font-family="var(--font-tech)" font-size="10" fill="var(--color-texte-secondaire)">Ø 110.0</text>
+            <text x="190" y="105" text-anchor="start" font-family="var(--font-tech)" font-size="10" fill="var(--color-texte-secondaire)">H 12.5</text>
+          </g>
+          <g transform="translate(100 100)">
+            <circle r="22" stroke-width="2"/>
+            <circle r="12" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <path d="M -22 0 A 22 22 0 0 1 0 -22" stroke-width="2" stroke="var(--color-accent)" opacity="0.8"/>
+            <circle cx="18" cy="-18" r="3" fill="var(--color-bloc)"/>
+          </g>
+        </svg>
+      </div>
+      <div class="pile" style="gap: var(--space-3);">
+        <h2 id="titre-parcours" class="titre-section" style="font-size: var(--fs-2xl); line-height: var(--lh-tight); margin-bottom: var(--space-2);">Parcours et installation</h2>
+        <p class="texte-large">L'horloger à l'origine de l'Atelier Balancier a suivi une formation complète en microtechnique et horlogerie mécanique dans le bassin horloger franc-comtois, sanctionnée par un diplôme d'État. Il a ensuite exercé plusieurs années au sein de manufactures et d'ateliers de restauration spécialisés dans les grandes complications et les montres de collection.</p>
+        <p class="texte-large">L'installation au 14 rue de la Monnaie à Besançon répond à une volonté de proximité avec le tissu horloger local et d'indépendance technique. L'atelier est équipé pour la révision complète : machine à laver les composants à bains ultrasons, sécheuse à air chaud filtré, chronocomparateur électronique, pointeuse, tour à colonnes, outillage de réglage de spiral et de mise en fonction d'échappements à ancre suisse, cylindre ou duplex.</p>
+        <p class="texte-large">Aucun sous-traitant n'intervient sur les mouvements. La fabrication de pivots, le redressement de spiraux, le remplacement de rubis ou l'ajustement de roues sont réalisés sur place. Pour les pièces introuvables (ressorts de barillet spécifiques, axes de balancier d'époque), nous faisons appel à des fournisseurs spécialisés suisses et français, ou nous les fabriquons au tour.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="titre-engagement">
+      <div class="conteneur pile" style="gap: var(--space-4); max-width: 720px;">
+        <h2 id="titre-engagement" class="titre-section" style="font-size: var(--fs-xl);">Engagement de service</h2>
+        <p class="texte-large">Nous ne proposons pas de forfaits standardisés. Le coût d'une révision dépend de l'état réel du mouvement, du calibre, de la disponibilité des pièces et du temps d'observation nécessaire. Le devis est établi après l'examen initial, gratuit si vous confiez la montre, facturé au temps passé si vous ne donnez pas suite.</p>
+        <p class="texte-large">La garantie couvre le bon fonctionnement du mouvement et l'étanchéité (si contrôle effectué) pour une durée de 12 mois à compter de la restitution. Elle ne couvre pas les chocs, l'intrusion d'eau par couronne non vissée, ni l'usure naturelle des composants non remplacés.</p>
+        <p class="texte-large"><a href="contact.html" class="lien-fleche">Demander un examen ou un rendez-vous</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied" role="contentinfo">
+    <div class="conteneur pied__colonnes">
+      <div>
+        <p class="marque" style="margin-bottom: var(--space-3);">Atelier Balancier</p>
+        <address class="legende" style="font-style: normal; line-height: var(--lh-base);">
+          14 rue de la Monnaie<br>
+          25000 Besançon<br>
+          France
+        </address>
+      </div>
+      <div>
+        <h3 class="titre-section" style="font-size: var(--fs-lg); margin-bottom: var(--space-3);">Modalités</h3>
+        <ul class="filets" style="line-height: var(--lh-base);">
+          <li>Dépôt et restitution sur rendez-vous uniquement</li>
+          <li>Envoi sécurisé après accord écrit préalable</li>
+          <li>Pas d'horaires d'ouverture fixes au public</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="titre-section" style="font-size: var(--fs-lg); margin-bottom: var(--space-3);">Navigation</h3>
+        <nav aria-label="Navigation pied de page">
+          <ul class="filets" style="line-height: var(--lh-base);">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="prestations.html">Prestations</a></li>
+            <li><a href="etabli.html">L'établi</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <p class="credits-photos" style="margin-top: var(--space-4); padding-top: var(--space-3); border-top: 1px solid rgba(255,255,255,0.1);">© Atelier Balancier</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('nav-bouton');
+      var nav = document.getElementById('nav-principal');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        nav.classList.toggle('nav--ouverte');
+      });
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          btn.setAttribute('aria-expanded', 'false');
+          nav.classList.remove('nav--ouverte');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

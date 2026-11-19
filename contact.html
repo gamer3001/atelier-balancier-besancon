@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Atelier Balancier</title>
+  <meta name="description" content="Contactez l'Atelier Balancier à Besançon pour une demande d'examen ou de rendez-vous. Dépôt et restitution sur rendez-vous uniquement, ou envoi sécurisé après accord écrit.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-coordonnees { font-family: var(--font-tech); font-size: var(--fs-base); line-height: var(--lh-base); }
+    .contact-coordonnees address { font-style: normal; }
+    .confirmation { display: none; padding: var(--space-3); background: var(--color-surface); border: 1px solid var(--color-accent); border-radius: var(--radius); margin-top: var(--space-3); }
+    .confirmation--visible { display: block; animation: apparition var(--transition-base); }
+    @keyframes apparition { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+    .champ--erreur { border-color: var(--color-erreur); }
+    .champ__erreur { display: none; color: var(--color-erreur); font-size: var(--fs-sm); margin-top: var(--space-1); }
+    .champ__erreur--visible { display: block; }
+    .svg-technique { width: 100%; max-width: 320px; height: auto; stroke: var(--color-bloc); stroke-width: 1.5; fill: none; }
+    @media (min-width: 768px) { .contact-grille { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); align-items: start; } }
+  </style>
+</head>
+<body>
+  <header class="entete">
+    <div class="conteneur entete__interieur">
+      <a href="index.html" class="marque" aria-label="Atelier Balancier — Accueil">Atelier Balancier</a>
+      <nav class="nav" id="nav-principal" role="navigation" aria-label="Navigation principale">
+        <a href="prestations.html">Prestations</a>
+        <a href="etabli.html">L'établi</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+      <button class="nav-bouton" id="nav-bouton" aria-expanded="false" aria-controls="nav-principal" aria-label="Ouvrir le menu" type="button">
+        <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" aria-labelledby="titre-contact">
+      <div class="conteneur">
+        <h1 id="titre-contact" class="titre-section" style="margin-bottom: var(--space-2);">Contact</h1>
+        <p class="chapeau" style="margin-bottom: var(--space-5);">Vous souhaitez faire examiner votre montre ou convenir d'un rendez-vous pour un dépôt à l'atelier. Remplissez le formulaire ci-dessous ; nous vous répondrons par courriel pour confirmer la marche à suivre.</p>
+
+        <div class="contact-grille pile--large">
+          <div>
+            <h2 class="titre-section" style="font-size: var(--fs-xl); margin-bottom: var(--space-3);">Coordonnées de l'atelier</h2>
+            <address class="contact-coordonnees pile" style="gap: var(--space-1);">
+              <p>Atelier Balancier</p>
+              <p>14 rue de la Monnaie</p>
+              <p>25000 Besançon</p>
+              <p>France</p>
+            </address>
+            <p class="legende" style="margin-top: var(--space-4); color: var(--color-texte-secondaire);">Accueil uniquement sur rendez-vous. Dépôt et restitution à l'atelier après confirmation, ou envoi sécurisé après accord écrit préalable.</p>
+          </div>
+
+          <div>
+            <form class="formulaire pile" id="formulaire-contact" novalidate>
+              <div class="champ pile">
+                <label for="nom" class="champ__label">Votre nom <span aria-hidden="true">*</span></label>
+                <input type="text" id="nom" name="nom" required autocomplete="name" class="champ__input" aria-describedby="nom-aide">
+                <span id="nom-aide" class="champ__aide">Nom complet du propriétaire de la montre</span>
+                <span class="champ__erreur" id="nom-erreur" aria-live="polite"></span>
+              </div>
+
+              <div class="champ pile">
+                <label for="email" class="champ__label">Adresse e-mail <span aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" required autocomplete="email" class="champ__input" aria-describedby="email-aide">
+                <span id="email-aide" class="champ__aide">Nous vous répondrons à cette adresse</span>
+                <span class="champ__erreur" id="email-erreur" aria-live="polite"></span>
+              </div>
+
+              <div class="champ pile">
+                <label for="modele" class="champ__label">Marque et modèle de la montre <span aria-hidden="true">*</span></label>
+                <input type="text" id="modele" name="modele" required autocomplete="off" class="champ__input" aria-describedby="modele-aide" placeholder="Ex. : Omega Seamaster 1968, référence 166.024">
+                <span id="modele-aide" class="champ__aide">Marque, modèle, année et référence si connue</span>
+                <span class="champ__erreur" id="modele-erreur" aria-live="polite"></span>
+              </div>
+
+              <div class="champ pile">
+                <label for="mouvement" class="champ__label">Type de mouvement <span aria-hidden="true">*</span></label>
+                <select id="mouvement" name="mouvement" required class="champ__input" aria-describedby="mouvement-aide">
+                  <option value="">— Sélectionnez —</option>
+                  <option value="manuel">Remontage manuel</option>
+                  <option value="automatique">Automatique</option>
+                  <option value="ancienne">Montre ancienne (avant 1970 environ)</option>
+                  <option value="inconnu">Inconnu</option>
+                </select>
+                <span id="mouvement-aide" class="champ__aide">Choisissez la catégorie la plus proche</span>
+                <span class="champ__erreur" id="mouvement-erreur" aria-live="polite"></span>
+              </div>
+
+              <div class="champ pile">
+                <label for="description" class="champ__label">Comportement constaté <span aria-hidden="true">*</span></label>
+                <textarea id="description" name="description" required rows="5" class="champ__input" aria-describedby="description-aide" placeholder="Décrivez le symptôme : arrêt, avance/retard, bruit anormal, couronne dure, verre fêlé, absence de fonction, etc."></textarea>
+                <span id="description-aide" class="champ__aide">Soyez le plus précis possible sur ce que vous observez</span>
+                <span class="champ__erreur" id="description-erreur" aria-live="polite"></span>
+              </div>
+
+              <button type="submit" class="bouton" style="margin-top: var(--space-2);">Envoyer la demande</button>
+            </form>
+
+            <div class="confirmation" id="confirmation" role="status" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <figure style="margin-top: var(--space-5); text-align: center;">
+          <svg class="svg-technique" viewBox="0 0 200 200" aria-labelledby="svg-titre svg-desc" role="img">
+            <title id="svg-titre">Schéma technique : balancier-spiral et rouage</title>
+            <desc id="svg-desc">Représentation au trait d'un balancier avec spiral, d'un rouage d'échappement et de côtes de boîtier, style plan de calibre.</desc>
+            <!-- Balancier-spiral -->
+            <circle cx="100" cy="100" r="45" stroke-dasharray="4 4"/>
+            <path d="M100 55 L100 145" stroke-dasharray="2 2"/>
+            <path d="M55 100 L145 100" stroke-dasharray="2 2"/>
+            <path d="M100 55 Q130 55 130 85 Q130 115 100 115 Q70 115 70 85 Q70 55 100 55" fill="none"/>
+            <!-- Spiral -->
+            <path d="M100 100 Q110 95 115 95 Q118 95 120 98 Q122 102 120 105 Q118 108 115 108 Q110 108 105 105 Q102 102 102 98 Q102 95 105 93 Q108 91 112 91 Q115 91 117 93 Q119 95 117 98 Q115 101 112 101 Q110 101 108 99 Q106 97 105 95" fill="none"/>
+            <!-- Rouage échappement -->
+            <circle cx="100" cy="100" r="22"/>
+            <g stroke-width="1">
+              <line x1="100" y1="78" x2="100" y2="70"/>
+              <line x1="100" y1="122" x2="100" y2="130"/>
+              <line x1="78" y1="100" x2="70" y2="100"/>
+              <line x1="122" y1="100" x2="130" y2="100"/>
+              <line x1="82" y1="82" x2="74" y2="74"/>
+              <line x1="118" y1="118" x2="126" y2="126"/>
+              <line x1="82" y1="118" x2="74" y2="126"/>
+              <line x1="118" y1="82" x2="126" y2="74"/>
+            </g>
+            <!-- Cotes boîtier -->
+            <g stroke-dasharray="3 3" stroke-width="1">
+              <line x1="30" y1="30" x2="170" y2="30"/>
+              <line x1="30" y1="170" x2="170" y2="170"/>
+              <line x1="30" y1="30" x2="30" y2="170"/>
+              <line x1="170" y1="30" x2="170" y2="170"/>
+              <text x="100" y="22" font-family="var(--font-tech)" font-size="8" text-anchor="middle" fill="var(--color-bloc)">Ø 36,0</text>
+              <text x="178" y="100" font-family="var(--font-tech)" font-size="8" text-anchor="start" fill="var(--color-bloc)" transform="rotate(90 178 100)">H 11,2</text>
+            </g>
+          </svg>
+          <figcaption class="legende" style="margin-top: var(--space-2);">Extrait de plan de calibre, balancier, échappement et côtes de boîtier</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied" role="contentinfo">
+    <div class="conteneur pied__colonnes">
+      <div>
+        <p class="marque" style="margin-bottom: var(--space-3);">Atelier Balancier</p>
+        <address class="legende" style="font-style: normal; line-height: var(--lh-base);">
+          14 rue de la Monnaie<br>
+          25000 Besançon<br>
+          France
+        </address>
+      </div>
+      <div>
+        <h3 class="titre-section" style="font-size: var(--fs-lg); margin-bottom: var(--space-3);">Modalités</h3>
+        <ul class="filets" style="line-height: var(--lh-base);">
+          <li>Dépôt et restitution sur rendez-vous uniquement</li>
+          <li>Envoi sécurisé après accord écrit préalable</li>
+          <li>Pas d'horaires d'ouverture fixes au public</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="titre-section" style="font-size: var(--fs-lg); margin-bottom: var(--space-3);">Navigation</h3>
+        <nav aria-label="Navigation pied de page">
+          <ul class="filets" style="line-height: var(--lh-base);">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="prestations.html">Prestations</a></li>
+            <li><a href="etabli.html">L'établi</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+        <p class="credits-photos" style="margin-top: var(--space-4); padding-top: var(--space-3); border-top: 1px solid rgba(255,255,255,0.1);">© Atelier Balancier</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const navBtn = document.getElementById('nav-bouton');
+      const nav = document.getElementById('nav-principal');
+      if (navBtn && nav) {
+        navBtn.addEventListener('click', function() {
+          const ouvert = nav.classList.toggle('nav--ouverte');
+          navBtn.setAttribute('aria-expanded', ouvert);
+          navBtn.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu');
+        });
+      }
+
+      const form = document.getElementById('formulaire-contact');
+      const confirmation = document.getElementById('confirmation');
+
+      function afficherErreur(champId, message) {
+        const champ = document.getElementById(champId);
+        const erreur = document.getElementById(champId + '-erreur');
+        if (champ) champ.classList.add('champ--erreur');
+        if (erreur) {
+          erreur.textContent = message;
+          erreur.classList.add('champ__erreur--visible');
+        }
+      }
+
+      function effacerErreur(champId) {
+        const champ = document.getElementById(champId);
+        const erreur = document.getElementById(champId + '-erreur');
+        if (champ) champ.classList.remove('champ--erreur');
+        if (erreur) {
+          erreur.textContent = '';
+          erreur.classList.remove('champ__erreur--visible');
+        }
+      }
+
+      function validerChamp(champ) {
+        const id = champ.id;
+        const valeur = champ.value.trim();
+        let valide = true;
+
+        if (champ.required && !valeur) {
+          afficherErreur(id, 'Ce champ est obligatoire');
+          valide = false;
+        } else if (id === 'email' && valeur && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valeur)) {
+          afficherErreur(id, 'Adresse e-mail invalide');
+          valide = false;
+        } else if (id === 'mouvement' && !valeur) {
+          afficherErreur(id, 'Veuillez sélectionner un type de mouvement');
+          valide = false;
+        } else {
+          effacerErreur(id);
+        }
+        return valide;
+      }
+
+      ['nom', 'email', 'modele', 'mouvement', 'description'].forEach(function(id) {
+        const champ = document.getElementById(id);
+        if (champ) {
+          champ.addEventListener('blur', function() { validerChamp(champ); });
+          champ.addEventListener('input', function() { if (champ.classList.contains('champ--erreur')) validerChamp(champ); });
+        }
+      });
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let valide = true;
+        ['nom', 'email', 'modele', 'mouvement', 'description'].forEach(function(id) {
+          const champ = document.getElementById(id);
+          if (champ && !validerChamp(champ)) valide = false;
+        });
+
+        if (valide) {
+          form.style.display = 'none';
+          confirmation.textContent = 'Votre demande a été envoyée. Nous vous répondrons par courriel dans les meilleurs délais pour convenir des modalités de dépôt ou d\'envoi.';
+          confirmation.classList.add('confirmation--visible');
+          form.reset();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

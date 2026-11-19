@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Atelier Balancier</title>
+  <meta name="description" content="Détail des services de l'Atelier Balancier : déroulé d'une intervention, conditions de dépôt, ce qui est inclus dans une révision, garanties et modalités de paiement.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .service-svg { width: 100%; max-width: 320px; height: auto; stroke: var(--color-bloc); stroke-width: 1.2; fill: none; }
+    .inclus-liste dt { font-weight: 500; color: var(--color-texte); }
+    .inclus-liste dd { margin-left: 0; padding-left: var(--space-4); color: var(--color-texte-secondaire); font-size: var(--fs-sm); }
+    .inclus-liste dd::before { content: "— "; color: var(--color-accent); }
+    .exclus-liste dt { font-weight: 500; color: var(--color-texte); }
+    .exclus-liste dd { margin-left: 0; padding-left: var(--space-4); color: var(--color-texte-secondaire); font-size: var(--fs-sm); }
+    .exclus-liste dd::before { content: "— "; color: var(--color-erreur); }
+  </style>
+</head>
+<body>
+  <header class="entete">
+    <div class="conteneur entete__interieur">
+      <a href="index.html" class="marque" aria-label="Atelier Balancier — Accueil">Atelier Balancier</a>
+      <nav class="nav" id="nav-principal" role="navigation" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="prestations.html">Prestations</a>
+        <a href="etabli.html">L'établi</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+      <button class="nav-bouton" id="nav-bouton" aria-expanded="false" aria-controls="nav-principal" aria-label="Ouvrir le menu" type="button">
+        <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--teintee" aria-labelledby="titre-services">
+      <div class="conteneur pile" style="gap: var(--space-5);">
+        <div class="pile" style="gap: var(--space-3);">
+          <h1 id="titre-services" class="titre-section" style="font-size: var(--fs-3xl); line-height: var(--lh-tight);">Services</h1>
+          <p class="chapeau texte-large">Cadre, déroulement et engagements de chaque intervention confiée à l'atelier.</p>
+        </div>
+        <figure aria-hidden="true">
+          <svg class="service-svg" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
+            <circle cx="100" cy="100" r="85" stroke-dasharray="8 4"/>
+            <circle cx="100" cy="100" r="55"/>
+            <line x1="100" y1="15" x2="100" y2="45"/>
+            <line x1="100" y1="155" x2="100" y2="185"/>
+            <line x1="15" y1="100" x2="45" y2="100"/>
+            <line x1="155" y1="100" x2="185" y2="100"/>
+            <g transform="translate(100,100) rotate(45)">
+              <line x1="0" y1="-70" x2="0" y2="-50"/>
+              <line x1="0" y1="50" x2="0" y2="70"/>
+              <line x1="-70" y1="0" x2="-50" y2="0"/>
+              <line x1="50" y1="0" x2="70" y2="0"/>
+            </g>
+            <ellipse cx="100" cy="100" rx="12" ry="7"/>
+            <path d="M100 93 Q108 93 108 100 Q108 107 100 107 Q92 107 92 100 Q92 93 100 93" fill="none"/>
+            <line x1="100" y1="100" x2="135" y2="70" stroke-dasharray="4 3"/>
+            <line x1="100" y1="100" x2="70" y2="135" stroke-dasharray="4 3"/>
+            <text x="100" y="195" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="10" fill="var(--color-texte-secondaire)">PLAN DE CALIBRE, COTES FONCTIONNELLES</text>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="titre-deroulement">
+      <div class="conteneur pile" style="gap: var(--space-4);">
+        <h2 id="titre-deroulement" class="titre-section">Déroulement d'une intervention</h2>
+        <p class="texte-large">Chaque montre suit un parcours tracé, du dépôt à la restitution, sans étape implicite.</p>
+        <ul class="filets pile" style="gap: var(--space-3);">
+          <li>
+            Prise de rendez-vous, Vous convenez d'un créneau pour le dépôt à l'atelier (14 rue de la Monnaie, Besançon) ou, après accord écrit, vous expédiez la montre par envoi sécurisé avec assurance à valeur déclarée.
+          </li>
+          <li>
+            Examen initial et diagnostic, Contrôle de l'amplitude au chronocomparateur, inspection visuelle au binoculaire, mesure de l'étanchéité si applicable. Un compte-rendu écrit vous est transmis avec le détail des opérations nécessaires et une estimation du temps d'intervention.
+          </li>
+          <li>
+            Accord et début des travaux, Aucune intervention n'est engagée sans votre validation expresse. Le mouvement est démonté, nettoyé en machine par bains successifs, chaque composant inspecté.
+          </li>
+          <li>
+            Remontage, réglage et essais, Huilage selon fiche technique du calibre, remontage, mise à l'heure, contrôle de l'amplitude dans plusieurs positions pendant une période d'observation de plusieurs jours. Vérification de la réserve de marche.
+          </li>
+          <li>
+            Contrôle final et restitution, Test d'étanchéité selon la norme du boîtier, avivage léger des surfaces si convenu, remise en boîte d'origine ou écrin neutre. Restitution sur rendez-vous à l'atelier ou renvoi sécurisé avec accusé de réception.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--teintee" aria-labelledby="titre-conditions">
+      <div class="conteneur pile" style="gap: var(--space-4);">
+        <h2 id="titre-conditions" class="titre-section">Conditions de dépôt et de prise en charge</h2>
+        <dl class="definitions pile" style="gap: var(--space-3);">
+          <div>
+            <dt>Accueil</dt>
+            <dd>Uniquement sur rendez-vous. Pas d'horaires d'ouverture fixes au public.</dd>
+          </div>
+          <div>
+            <dt>Envoi postal</dt>
+            <dd>Accepté après accord écrit préalable (courriel). Emballage rigide, calage suffisant, assurance à valeur déclarée à votre charge. L'atelier décline toute responsabilité en cas de perte ou avarie pendant le transport aller ou retour si les conditions d'emballage ne sont pas respectées.</dd>
+          </div>
+          <div>
+            <dt>Montres acceptées</dt>
+            <dd>Mouvements mécaniques à remontage manuel, automatiques, montres anciennes de poche ou de poignet. Montres à quartz, montres connectées et mouvements à tuning-fork non pris en charge.</dd>
+          </div>
+          <div>
+            <dt>État d'origine</dt>
+            <dd>Toute modification antérieure non documentée (polissage excessif, pièces adaptées, soudures) est signalée au diagnostic. L'atelier se réserve le droit de refuser une intervention si l'intégrité du mouvement ne peut être garantie.</dd>
+          </div>
+          <div>
+            <dt>Délais</dt>
+            <dd>Communiqués à titre indicatif après diagnostic. La période d'observation post-remontage (plusieurs jours) est incompressible pour valider la régularité de marche.</dd>
+          </div>
+          <div>
+            <dt>Paiement</dt>
+            <dd>Règlement à la restitution (espèces, virement bancaire instantané, chèque). Aucun envoi en contre-remboursement.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="titre-inclus">
+      <div class="conteneur pile" style="gap: var(--space-4);">
+        <h2 id="titre-inclus" class="titre-section">Ce qui est inclus dans une révision complète</h2>
+        <dl class="inclus-liste pile" style="gap: var(--space-2);">
+          <div><dt>Démontage intégral du mouvement</dt><dd>Chaque composant sorti, inspecté, tracé.</dd></div>
+          <div><dt>Nettoyage en machine</dt><dd>Bains successifs (dégraissant, rinçage, séchage) adaptés au calibre.</dd></div>
+          <div><dt>Inspection pivots et rubis</dt><dd>Contrôle au binoculaire, remplacement des rubis fendus ou usés si nécessaire (pièce facturée en sus).</dd></div>
+          <div><dt>Remontage et huilage</dt><dd>Graisses et huiles selon préconisations du fabricant ou fiche technique d'époque.</dd></div>
+          <div><dt>Réglage de précision</dt><dd>Mise à l'heure, ajustement de la raquette, contrôle de l'amplitude en 5 positions.</dd></div>
+          <div><dt>Contrôle d'étanchéité</dt><dd>Test à sec et/ou à l'eau selon la construction du boîtier, remplacement des joints standards (couronne, fond, poussoirs).</dd></div>
+          <div><dt>Avivage léger du boîtier</dt><dd>Ponçage fin et brossage dans le sens du brossage d'origine, sans effacer les arêtes vives ni les chiffres de référence.</dd></div>
+          <div><dt>Période d'observation</dt><dd>Plusieurs jours sur chronocomparateur, positions cadran haut, couronne haut, couronne bas, gauche, droite.</dd></div>
+          <div><dt>Compte-rendu écrit</dt><dd>Mesures avant/après, pièces remplacées, observations, conseils d'entretien.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section section--teintee" aria-labelledby="titre-exclus">
+      <div class="conteneur pile" style="gap: var(--space-4);">
+        <h2 id="titre-exclus" class="titre-section">Ce qui n'est pas inclus (facturé en sus sur devis)</h2>
+        <dl class="exclus-liste pile" style="gap: var(--space-2);">
+          <div><dt>Pièces de rechange</dt><dd>Ressort de barillet, axe de balancier, tige de remontoir, couronne, verre (minéral, saphir, hésalite), joints spécifiques, vis, roues usées.</dd></div>
+          <div><dt>Recherche de pièces d'époque</dt><dd>Temps de sourcing, achat auprès de fournisseurs spécialisés, fabrication sur mesure en atelier (tournage, fraisage, traitement thermique).</dd></div>
+          <div><dt>Restauration de cadran</dt><dd>Nettoyage spécifique émail, réfection index, ré-émaillage partiel ou total, intervention distincte soumise à accord séparé.</dd></div>
+          <div><dt>Redressage de boîtier</dt><dd>Correction d'ovalisation, rebouchage de trous, soudure sur cornes ou carrure, hors avivage léger standard.</dd></div>
+          <div><dt>Frais d'expédition</dt><dd>Emballage sécurisé, assurance valeur déclarée, transport aller et retour.</dd></div>
+          <div><dt>Intervention sur complications</dt><dd>Chronographe, quantième, répétition, phase de lune, tourbillon, temps d'étude et de réglage spécifique.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="titre-garantie">
+      <div class="conteneur pile" style="gap: var(--space-4);">
+        <h2 id="titre-garantie" class="titre-section">Garantie et suivi</h2>
+        <p class="texte-large">Toute intervention bénéficie d'une garantie de bon fonctionnement de six mois à compter de la restitution, couvrant le travail réalisé et les pièces fournies par l'atelier.</p>
+        <p class="texte-large">Sont exclus de la garantie : les dommages résultants d'un choc, d'une immersion non conforme à l'étanchéité d'origine, d'une manipulation du fond de boîte par un tiers, de l'usure normale des composants non remplacés, ou d'un manque de remontage régulier pour les montres automatiques.</p>
+        <p class="texte-large">En cas de dérive de marche constatée pendant la période de garantie, la montre est reprise à l'atelier sans frais de main-d'œuvre pour réexamen et correction. Les frais d'envoi restent à votre charge.</p>
+        <p class="note">La garantie ne constitue pas une extension de la durée de vie du mouvement ni un engagement de précision chronométrique certifiée.</p>
+      </div>
+    </section>
+
+    <section class="section section--teintee" aria-labelledby="titre-contact-services">
+      <div class="conteneur pile centre" style="gap: var(--space-4);">
+        <h2 id="titre-contact-services" class="titre-section">Confier une montre</h2>
+        <p class="texte-large" style="max-width: 40ch;">Prenez rendez-vous pour un dépôt à l'atelier ou convenez d'un envoi sécurisé après accord écrit.</p>
+        <a href="contact.html" class="bouton lien-fleche" style="display: inline-flex;">Demander un rendez-vous<svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied" role="contentinfo">
+    <div class="conteneur pied__colonnes">
+      <div>
+        <p class="marque" style="margin-bottom: var(--space-3);">Atelier Balancier</p>
+        <address class="legende" style="font-style: normal; line-height: var(--lh-base);">
+          14 rue de la Monnaie<br>
+          25000 Besançon<br>
+          France
+        </address>
+      </div>
+      <div>
+        <h3 class="titre-section" style="font-size: var(--fs-lg); margin-bottom: var(--space-3);">Modalités</h3>
+        <ul class="filets" style="line-height: var(--lh-base);">
+          <li>Dépôt et restitution sur rendez-vous uniquement</li>
+          <li>Envoi sécurisé après accord écrit préalable</li>
+          <li>Pas d'horaires d'ouverture fixes au public</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="titre-section" style="font-size: var(--fs-lg); margin-bottom: var(--space-3);">Navigation</h3>
+        <nav aria-label="Navigation pied de page">
+          <ul class="filets" style="line-height: var(--lh-base);">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="prestations.html">Prestations</a></li>
+            <li><a href="etabli.html">L'établi</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+        <p class="credits-photos" style="margin-top: var(--space-4); padding-top: var(--space-3); border-top: 1px solid rgba(255,255,255,0.1);">© Atelier Balancier</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('nav-bouton');
+      var nav = document.getElementById('nav-principal');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function() {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+        nav.classList.toggle('nav--ouverte');
+      });
+      nav.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          btn.setAttribute('aria-expanded', 'false');
+          nav.classList.remove('nav--ouverte');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
